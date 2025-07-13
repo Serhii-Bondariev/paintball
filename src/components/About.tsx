@@ -1,4 +1,3 @@
-import React from 'react';
 const About = () => {
   return <section id="about" className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -37,10 +36,10 @@ const About = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <img src="https://images.unsplash.com/photo-1551316679-9c6ae9dec224?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Пейнтбольна гра в лісі" className="rounded-lg shadow-lg h-64 w-full object-cover transform hover:scale-[1.02] transition-transform border-2 border-rose-500" />
-            <img src="https://images.unsplash.com/photo-1610217053402-b598aa3e8f7c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Пейнтбольне спорядження" className="rounded-lg shadow-lg h-64 w-full object-cover transform hover:scale-[1.02] transition-transform border-2 border-orange-500" />
-            <img src="https://images.unsplash.com/photo-1580238053495-b9720401fd45?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Озеро біля пейнтбольного клубу" className="rounded-lg shadow-lg h-64 w-full object-cover transform hover:scale-[1.02] transition-transform border-2 border-orange-500" />
-            <img src="https://images.unsplash.com/photo-1517436073-3b1b1b1b1b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Покинутий піонерський табір" className="rounded-lg shadow-lg h-64 w-full object-cover transform hover:scale-[1.02] transition-transform border-2 border-rose-500" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpY7JE_GEm-JGbWUfXxUHKTnqwI4_DaEgIxA&s" alt="Пейнтбольна гра в лісі" className="rounded-lg shadow-lg h-64 w-full object-cover transform hover:scale-[1.02] transition-transform border-2 border-rose-500" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7xh82Nx7aviLFcf6FP5zwJRyFeUnqQ6Jx2Q&s" alt="Пейнтбольне спорядження" className="rounded-lg shadow-lg h-64 w-full object-cover transform hover:scale-[1.02] transition-transform border-2 border-orange-500" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTds7aDL2ruDG341NxQwlPwOIEq6woiIiasLg&s" alt="Озеро біля пейнтбольного клубу" className="rounded-lg shadow-lg h-64 w-full object-cover transform hover:scale-[1.02] transition-transform border-2 border-orange-500" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx1vereY8ee0nqNbC8Fg8Pa0fJnj91I4EUgdRXG5ARJYB0ieCIFf04K_uaMcmDANX6n80&usqp=CAU" alt="Покинутий піонерський табір" className="rounded-lg shadow-lg h-64 w-full object-cover transform hover:scale-[1.02] transition-transform border-2 border-rose-500" />
           </div>
         </div>
       </div>

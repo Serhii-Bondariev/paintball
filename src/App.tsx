@@ -11,7 +11,7 @@ export function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [socialLink, setSocialLink] = useState('');
   const [socialName, setSocialName] = useState('');
-  const handleSocialClick = (link, name) => {
+  const handleSocialClick = (link: React.SetStateAction<string>, name: React.SetStateAction<string>) => {
     setSocialLink(link);
     setSocialName(name);
     setModalOpen(true);
@@ -29,3 +29,5 @@ export function App() {
       <SocialModal isOpen={modalOpen} onClose={() => setModalOpen(false)} socialLink={socialLink} socialName={socialName} />
     </div>;
 }
+
+export default App;

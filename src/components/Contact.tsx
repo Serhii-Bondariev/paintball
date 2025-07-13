@@ -1,11 +1,13 @@
-import React, { lazy } from 'react';
 import { MapPinIcon, PhoneIcon, MailIcon, ClockIcon, FacebookIcon, InstagramIcon, Send as TelegramIcon } from 'lucide-react';
-const Contact = ({
-  onSocialClick
-}) => {
-  const handleSubmit = e => {
+import { FormEvent } from 'react';
+
+interface ContactProps {
+  onSocialClick: (link: string, name: string) => void;
+}
+const Contact = ({ onSocialClick }: ContactProps) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Form submission logic would go here
+    // Логіка відправки форми
     alert("Дякуємо за повідомлення! Ми зв'яжемося з вами найближчим часом.");
   };
   return <section id="contact" className="py-16 bg-neutral-100">
@@ -23,13 +25,12 @@ const Contact = ({
               <div className="flex items-start">
                 <MapPinIcon className="text-orange-500 mr-4 mt-1 flex-shrink-0" size={20} />
                 <p className="text-gray-700">
-                  вул. Лісова, 123, <br />
-                  с. Зелене, Київська область
+                  смт.Пісківка, Київська область
                 </p>
               </div>
               <div className="flex items-center">
                 <PhoneIcon className="text-rose-500 mr-4 flex-shrink-0" size={20} />
-                <p className="text-gray-700">+38 (050) 123-45-67</p>
+                <p className="text-gray-700">+38 (097) 997-68-69</p>
               </div>
               <div className="flex items-center">
                 <MailIcon className="text-orange-500 mr-4 flex-shrink-0" size={20} />
@@ -96,10 +97,16 @@ const Contact = ({
         </div>
         {/* Map */}
         <div className="mt-12 rounded-lg overflow-hidden shadow-md h-80 border-4 border-rose-500">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d325516.3770455823!2d30.252511957031247!3d50.4016990999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf4ee15a4505%3A0x764931d2170146fe!2z0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1625145220860!5m2!1suk!2sua" width="100%" height="100%" style={{
-          border: 0
-        }} allowFullScreen loading="lazy" title="Карта розташування"></iframe>
-        </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2532.392139688678!2d29.59663!3d50.71430!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTAuNzE0MzAsIDI5LjU5ODYz!5e0!3m2!1suk!2sua!4v1720975080000!5m2!1suk!2sua"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            title="Карта розташування"
+          ></iframe>
+          </div>
       </div>
     </section>;
 };

@@ -1,16 +1,22 @@
-import React from 'react';
-import { XIcon, FacebookIcon, InstagramIcon, Send as TelegramIcon } from 'lucide-react';
+import { XIcon, Facebook, InstagramIcon, Send as TelegramIcon } from 'lucide-react';
+
+interface SocialModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  socialLink: string;
+  socialName: string;
+}
 const SocialModal = ({
   isOpen,
   onClose,
   socialLink,
   socialName
-}) => {
+} : SocialModalProps) => {
   if (!isOpen) return null;
   const getSocialIcon = () => {
     switch (socialName) {
       case 'Facebook':
-        return <FacebookIcon size={40} className="text-blue-600" />;
+        return <Facebook size={40} className="text-blue-600" />;
       case 'Instagram':
         return <InstagramIcon size={40} className="text-pink-600" />;
       case 'Telegram':
@@ -23,7 +29,7 @@ const SocialModal = ({
     window.open(socialLink, '_blank');
     onClose();
   };
-  return <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4">
+  return <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4 animate-fade-in bg-light-900">
       <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative border-t-4 border-rose-600">
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-rose-600" aria-label="Закрити">
           <XIcon size={20} />

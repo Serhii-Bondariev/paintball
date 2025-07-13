@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Users2Icon, TrophyIcon, CalendarIcon, ShirtIcon } from 'lucide-react';
 const Services = () => {
   const services = [{
