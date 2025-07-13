@@ -1,5 +1,5 @@
 
-import { Facebook, Instagram, PhoneIcon, MailIcon, LocateIcon, Send as TelegramIcon } from 'lucide-react';
+import { Facebook, Instagram, PhoneIcon, MailIcon, MapPinned, Send as TelegramIcon } from 'lucide-react';
 
 interface FooterProps {
   onSocialClick: (link: string, name: string) => void;
@@ -73,9 +73,13 @@ const Footer = ({
               Контактна інформація
             </h3>
             <address className="not-italic  text-gray-300 space-y-2">
-              <p>смт. Пісківка, Київська область</p>
+
+              <div className="flex items-center">
+                <MapPinned className="mr-2" size={20} />
+                <p>смт. Пісківка, Київська область</p>
+              </div>
               <a href="tel:+380979976869" className="flex items-center text-gray-300 hover:text-rose-400 transition-colors"><PhoneIcon className="mr-2" size={16} /> +38 (097) 997 68 69</a>
-              <a href='mailto:paintball.piskivka@gmail.com' className="flex items-center text-gray-300 hover:text-rose-400 transition-colors"><MailIcon className="mr-2" size={16} /> paintball.piskivka@gmail.com</a>
+              <a href='mailto:paintball.piskivka@gmail.com' className="flex items-center owerflow-hidden text-gray-300 hover:text-rose-400 transition-colors"><MailIcon className="mr-2" size={16} />paintball.piskivka@gmail.com</a>
               {/* <p>Email: paintball.piskivka@gmail.com</p> */}
               {/* <p>Пн-Пт: 10:00 - 19:00</p>
               <p>Сб-Нд: 9:00 - 19:00</p> */}
