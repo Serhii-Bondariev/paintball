@@ -1,5 +1,5 @@
 
-import { Facebook, Instagram, Send as TelegramIcon } from 'lucide-react';
+import { Facebook, Instagram, PhoneIcon, MailIcon, LocateIcon, Send as TelegramIcon } from 'lucide-react';
 
 interface FooterProps {
   onSocialClick: (link: string, name: string) => void;
@@ -14,7 +14,7 @@ const Footer = ({
           {/* Logo and Description */}
           <div>
             <div className="flex items-center mb-4">
-              <img src="/src/assets/logo.png" alt="Логотип пейнтбольного клубу" className="h-10 w-10 rounded-full mr-2 object-cover border-2 border-rose-500" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG_o6mLa71brE5NXmNje44KrTpY2sd1_xVpQ&s" alt="Логотип пейнтбольного клубу" className="h-10 w-10 rounded-full mr-2 object-cover border-2 border-rose-500" />
               <h2 className="text-xl font-bold text-rose-500">Пейнтбол Клуб <br/> - TRIDENT - </h2>
             </div>
             <p className="text-gray-300 mb-4">
@@ -72,12 +72,13 @@ const Footer = ({
             <h3 className="text-lg font-semibold mb-4 text-orange-500">
               Контактна інформація
             </h3>
-            <address className="not-italic text-gray-300 space-y-2">
+            <address className="not-italic  text-gray-300 space-y-2">
               <p>смт. Пісківка, Київська область</p>
-              <p>Телефон: +38 (097) 997 68 69 </p>
-              <p>Email: paintball.piskivka@gmail.com</p>
-              <p>Пн-Пт: 10:00 - 19:00</p>
-              <p>Сб-Нд: 9:00 - 19:00</p>
+              <a href="tel:+380979976869" className="flex items-center text-gray-300 hover:text-rose-400 transition-colors"><PhoneIcon className="mr-2" size={16} /> +38 (097) 997 68 69</a>
+              <a href='mailto:paintball.piskivka@gmail.com' className="flex items-center text-gray-300 hover:text-rose-400 transition-colors"><MailIcon className="mr-2" size={16} /> paintball.piskivka@gmail.com</a>
+              {/* <p>Email: paintball.piskivka@gmail.com</p> */}
+              {/* <p>Пн-Пт: 10:00 - 19:00</p>
+              <p>Сб-Нд: 9:00 - 19:00</p> */}
             </address>
           </div>
         </div>

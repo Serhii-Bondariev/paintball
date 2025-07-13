@@ -32,14 +32,14 @@ const Header = ({ onSocialClick }: HeaderProps) => {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
           <img
-            src="/src/assets/logo.png"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG_o6mLa71brE5NXmNje44KrTpY2sd1_xVpQ&s"
             alt="Логотип пейнтбольного клубу"
-            className="h-10 w-10 rounded-full mr-2 object-cover border-2 border-rose-600"
+            className="h-12 w-12 rounded-full mr-4 object-cover border-2 border-rose-600"
           />
           <h1 className="text-xl font-bold text-white-500">Пейнтбол Клуб <br/> - TRIDENT - </h1>
         </div>
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center mr-4 space-x-6">
           <ul className="flex space-x-6">
             {navItems.map((item) => (
               <li key={item.name}>
