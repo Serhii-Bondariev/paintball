@@ -14,7 +14,7 @@ const Footer = ({
           {/* Logo and Description */}
           <div>
             <div className="flex items-center mb-4">
-              <img src="/public/logo/logo_dark.png" alt="Логотип пейнтбольного клубу" className="h-10 w-10 rounded-full mr-2 object-cover border-2 border-rose-500" />
+              <img src="/public/logo/Clear_logo.png" alt="Логотип пейнтбольного клубу" className="h-10 w-10 rounded-full mr-2 object-cover border-2 border-rose-500" />
               <h2 className="text-xl font-bold text-rose-500">Пейнтбол Клуб <br/> - TRIDENT - </h2>
             </div>
             <p className="text-gray-300 mb-4">

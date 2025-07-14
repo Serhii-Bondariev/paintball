@@ -7,9 +7,10 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       </div>
       <div className="relative h-full flex flex-col justify-center items-center text-white text-center px-4">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-          <span className="text-rose-500">SHOOT </span> <br/> and{' '}
-          <span className="text-orange-500"> RUN!</span>
+        <h1 className="text-6xl md:text-5xl lg:text-7xl font-bold mb-8">
+                    <span className="text-orange-500"> RUN!</span> <br/> {' '}
+          <span className="text-rose-500">SHOOT! </span> <br/> {' '}
+          <span className="text-green-400 "> WIN!</span>
         </h1>
         {/* <p className="text-xl md:text-2xl mb-8 max-w-3xl">
           Пейнтбольні ігри на природі в хвойному лісі біля озера

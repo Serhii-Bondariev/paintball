@@ -32,7 +32,7 @@ const Header = ({ onSocialClick }: HeaderProps) => {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
           <img
-            src="/public/logo/logo_dark.png"
+            src="/public/logo/Clear_logo.png"
             alt="Логотип пейнтбольного клубу"
             className="h-12 w-12 rounded-full mr-4 object-cover border-2 border-rose-600"
           />
