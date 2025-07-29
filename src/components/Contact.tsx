@@ -1,35 +1,25 @@
-// import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { MapPinIcon, PhoneIcon, MailIcon, ClockIcon, FacebookIcon, InstagramIcon, Send as TelegramIcon, Loader2Icon } from 'lucide-react';
 import { IMaskInput } from 'react-imask';
 import { useSearchParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 
-// Інтерфейс для пропсів
 interface ContactProps {
   onSocialClick: (link: string, name: string) => void;
 }
 
-// Інтерфейс для помилок Formspree
-interface SubmissionError {
-  code: string;
-  message: string;
-  field?: string;
-}
-
-// Дані про пакети
 const packages = [
   {
     title: 'Стандарт',
-    features: ['2 години гри', '100 кульок', 'Базове спорядження', '1 ігрова локація', 'Інструктаж'],
+    features: ['2 години гри', '200 кульок', 'Базове спорядження', '1 ігрова локація', 'Інструктаж'],
   },
   {
     title: 'Преміум',
-    features: ['3 години гри', '200 кульок', 'Повний комплект спорядження', '2 ігрові локації', 'Інструктаж та супровід', 'Фото з гри'],
+    features: ['3 години гри', '400 кульок', 'Повний комплект спорядження', '2 ігрові локації', 'Інструктаж та супровід', 'Фото з гри'],
   },
   {
     title: 'VIP',
-    features: ['4 години гри', '300 кульок', 'Преміум спорядження', 'Всі локації', 'Персональний інструктор', 'Фото та відео з гри', 'Пікнік після гри'],
+    features: ['4 години гри', '500 кульок', 'Преміум спорядження', 'Всі локації', 'Персональний інструктор', 'Фото та відео з гри'],
   },
 ];
 
@@ -42,12 +32,10 @@ const Contact = ({ onSocialClick }: ContactProps) => {
   const initialMessage = searchParams.get('message') || (selectedPackage ? `Я хочу замовити пакет ${selectedPackage}: ${packages.find(p => p.title === selectedPackage)?.features.join(', ')}` : '');
   const [message, setMessage] = useState<string>(initialMessage);
 
-  // Локальна валідація телефону
   const phoneError = !/^\+38\s?\(\d{3}\)\s?\d{3}-\d{2}-\d{2}$/.test(phone) && phone
     ? 'Телефон має бути у форматі +38 (XXX) XXX-XX-XX'
     : '';
 
-  // Оновлення повідомлення при виборі пакету
   useEffect(() => {
     if (selectedPackage) {
       const pkg = packages.find(p => p.title === selectedPackage);
@@ -61,7 +49,6 @@ const Contact = ({ onSocialClick }: ContactProps) => {
     }
   }, [selectedPackage, setSearchParams]);
 
-  // Очищення форми після успішної відправки
   const handleFormReset = () => {
     const form = document.querySelector('form');
     if (form) form.reset();
@@ -71,7 +58,6 @@ const Contact = ({ onSocialClick }: ContactProps) => {
     setSearchParams({});
   };
 
-  // Обробка клавіатурної навігації
   const handleKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
     if (e.key === 'Enter' && e.target instanceof HTMLInputElement) {
       e.preventDefault();
@@ -80,13 +66,11 @@ const Contact = ({ onSocialClick }: ContactProps) => {
     }
   };
 
-  // Автофокус на поле імені
   useEffect(() => {
     const nameInput = document.getElementById('name');
     if (nameInput) nameInput.focus();
   }, []);
 
-  // Прокрутка до форми при завантаженні з параметром package
   useEffect(() => {
     if (searchParams.get('package')) {
       const contactSection = document.getElementById('contact');
@@ -96,9 +80,8 @@ const Contact = ({ onSocialClick }: ContactProps) => {
     }
   }, [searchParams]);
 
-  // Перевірка помилок для конкретного поля
   const getFieldError = (field: string) => {
-    return Array.isArray(state.errors) ? state.errors.find((err: SubmissionError) => err.field === field)?.message : undefined;
+    return Array.isArray(state.errors) ? state.errors.find((err: any) => err.field === field)?.message : undefined;
   };
 
   return (
@@ -108,7 +91,6 @@ const Contact = ({ onSocialClick }: ContactProps) => {
           Контакти
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Contact Information */}
           <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-rose-500">
             <h3 className="text-2xl font-semibold mb-6 text-rose-600">
               Зв'яжіться з нами
@@ -161,12 +143,29 @@ const Contact = ({ onSocialClick }: ContactProps) => {
               </button>
             </div>
           </div>
-          {/* Contact Form */}
           <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-orange-500">
             <h3 className="text-2xl font-semibold mb-6 text-rose-600">
               Напишіть нам
             </h3>
-            <form onSubmit={(e) => handleSubmit(e).then(() => handleFormReset())} onKeyDown={handleKeyDown} className="animate-fade-in">
+            <form
+              onSubmit={(e) => {
+                console.log('Submitting form:', {
+                  name: (e.target as any).name.value,
+                  email: (e.target as any).email.value,
+                  phone,
+                  message,
+                  package: selectedPackage,
+                });
+                handleSubmit(e)
+                  .then(() => {
+                    console.log('Form submitted successfully');
+                    handleFormReset();
+                  })
+                  .catch((err) => console.error('Form submission error:', err));
+              }}
+              onKeyDown={handleKeyDown}
+              className="animate-fade-in"
+            >
               <div className="mb-4">
                 <label htmlFor="package" className="block text-gray-700 mb-2">
                   Оберіть пакет
@@ -327,7 +326,6 @@ const Contact = ({ onSocialClick }: ContactProps) => {
             </form>
           </div>
         </div>
-        {/* Map */}
         <div className="mt-12 rounded-lg overflow-hidden shadow-md h-80 border-4 border-rose-500">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2532.392139688678!2d29.59663!3d50.71430!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTAuNzE0MzAsIDI5LjU5ODYз!5e0!3m2!1suk!2sua!4v1720975080000!5m2!1suk!2sua"

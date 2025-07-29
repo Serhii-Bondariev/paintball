@@ -23,7 +23,7 @@ const Footer = ({
               піонерського табору.
             </p>
             <div className="flex space-x-4">
-              <button onClick={() => onSocialClick('https://facebook.com', 'Facebook')} className="hover:text-blue-400 transition-colors" aria-label="Facebook">
+              <button onClick={() => onSocialClick('https://facebook.com', 'Facebook')} className="hover:text-blue-600 transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </button>
               <button onClick={() => onSocialClick('https://instagram.com', 'Instagram')} className="hover:text-pink-400 transition-colors" aria-label="Instagram">
@@ -79,7 +79,8 @@ const Footer = ({
                 <p>смт. Пісківка, Київська область</p>
               </div>
               <a href="tel:+380979976869" className="flex items-center text-gray-300 hover:text-rose-400 transition-colors"><PhoneIcon className="mr-2" size={16} /> +38 (097) 997 68 69</a>
-              <a href='mailto:paintball.piskivka@gmail.com' className="flex items-center owerflow-hidden text-gray-300 hover:text-rose-400 transition-colors"><MailIcon className="mr-2" size={16} />paintball.piskivka@gmail.com</a>
+              <a href='trident4club@ukr.net' className="flex items-center owerflow-hidden text-gray-300 hover:text-rose-400 transition-colors">
+                <MailIcon className="mr-2" size={16} />trident4club@ukr.net</a>
               {/* <p>Email: paintball.piskivka@gmail.com</p> */}
               {/* <p>Пн-Пт: 10:00 - 19:00</p>
               <p>Сб-Нд: 9:00 - 19:00</p> */}
